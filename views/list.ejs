@@ -3,13 +3,16 @@
         <h1><%= Title %></h1>
     </div>
     
+    <form action="/delete" method="post">
     <div class="box">
         <% for (i=0;i<newTasks.length;i++){ %>
             <div class="item">
-                <input type="checkbox" name="" id="">
-                <p><%= newTasks[i]%></p>
+                <input type="checkbox" name="checkbox" value="<%= newTasks[i]._id %>" onclick='this.form.submit()' id="">
+                <p><%= newTasks[i].name%></p>
             </div>
         <% } %>
+        <input type="hidden" name="listName" value="<%= Title %>">
+    </form>
     
         
 
